@@ -38,6 +38,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: UTILITY_DIR, destination: "#{HOME_DIR}/bin"
   config.vm.provision "file", source: "#{CONFIG_DIR}/bashrc", destination: "#{HOME_DIR}/.bashrc"
   config.vm.provision "file", source: "#{CONFIG_DIR}/vimrc", destination: "#{HOME_DIR}/.vimrc"
+  config.vm.provision "file", source: "#{CONFIG_DIR}/profile", destination: "#{HOME_DIR}/.profile"
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "lambda_playground"
