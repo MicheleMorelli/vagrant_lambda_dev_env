@@ -2,7 +2,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-SHARED_FOLDER="."
+SHARED_FOLDER=ENV['VAGRANT_LAMBDA_SHARED_DIR']
 
 HOME_DIR= "/home/vagrant"
 PROVISION_DIR="./provisioning"

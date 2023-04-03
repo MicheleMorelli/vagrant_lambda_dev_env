@@ -14,9 +14,18 @@ It will be then possible to get the results from the API in the host, eg:
 curl localhost:3000/my_function
 ```
 
+## Before you run the machine
+Set up the following environment variables:
+
+```
+# This is the directory that will be shared with the guest VM (this will be where
+you store store the code of your Lambdas)
+
+VAGRANT_LAMBDA_SHARED_DIR
+``` 
+
 ## To install and run the VM
 
-Set the `SHARED_FOLDER` value in the `Vagrantfile` to where you keep your Lambda-related code.
 Then:
 ```
 vagrant up
