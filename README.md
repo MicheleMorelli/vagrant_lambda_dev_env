@@ -33,3 +33,30 @@ vagrant ssh
 ```
 
 Enjoy!
+
+## Some Gotchas
+
+> **Note**:
+> Vagrant/Virtualbox does not work well with symlinks (for security reasons).
+> Instead of allowing symlinks to VB, I decided to simply create a virtual env
+> in the guest VM, which gets activated once the session starts (`~/VM_VENV/bin/activate`)
+> is run via the `bashrc`)
+>
+> Therefore, you will need to install the dependencies in your VM by using something like:
+```
+python3 -m pip install -r path/to/requirements.txt
+```
+
+If you are editing your code in an IDE in your host, you will need to create a virtual 
+environment on the host. 
+
+> **Warning**:
+> The `venv` created on the host does not work on the guest and vice-versa (due to
+> the symlinks issue with VB).
+
+It is advisable to always using virtual environments when using Python.
+
+One way to enforce this is to ensure that the following local env is set to true:
+```
+PIP_REQUIRE_VIRTUALENV
+```
