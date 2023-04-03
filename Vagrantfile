@@ -35,6 +35,13 @@ Vagrant.configure("2") do |config|
     },
     privileged: false 
   
+  config.vm.provision "shell",
+    path: "#{PROVISION_DIR}/python_env_prep.sh",
+    env: {
+      "HOME_DIR" => HOME_DIR
+    },
+    privileged: false 
+  
   config.vm.provision "file", source: UTILITY_DIR, destination: "#{HOME_DIR}/bin"
   config.vm.provision "file", source: "#{CONFIG_DIR}/bashrc", destination: "#{HOME_DIR}/.bashrc"
   config.vm.provision "file", source: "#{CONFIG_DIR}/vimrc", destination: "#{HOME_DIR}/.vimrc"

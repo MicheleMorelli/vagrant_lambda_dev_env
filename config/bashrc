@@ -127,3 +127,16 @@ alias black_bgr="echo -ne '\e]11;#000000\a';echo -ne '\e]10;#b3ffab\a'"
 alias green_bgr="echo -ne '\e]11;#074200\a';echo -ne '\e]10;#51e340\a'"
 
 black_bgr
+
+# Activating Python Venv automatically
+source ~/VM_VENV/bin/activate
+
+echo "SAM/AWS Lambda local dev env"
+
+echo "============================"
+
+# Ensuring that we are using the right version of Python
+echo "=> which python3"
+which python3
+echo "=> which sam"
+which sam
