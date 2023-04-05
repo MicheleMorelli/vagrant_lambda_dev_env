@@ -60,3 +60,8 @@ One way to enforce this is to ensure that the following local env is set to true
 ```
 PIP_REQUIRE_VIRTUALENV
 ```
+
+
+> **Note**:
+> At the time of writing, SAM and AWS Lambda fully support Python 3.9, but not
+> 3.10. Therefore, I used the deadsnakes PPA to download Python 3.9. This should be updated once Python 3.10 will be updated.
