@@ -1,0 +1,15 @@
+#! /usr/bin/bash
+
+<<'###INTRO'                                                                       
+This script tails the Localstack logs, if Localstack is running.
+###INTRO
+
+
+LOCALSTACK_DOCKER_ID=$(docker inspect --format="{{.Id}}" localstack_main)
+
+if [ -z "$LOCALSTACK_DOCKER_ID" ]
+then
+      echo "The localstack_main does not appear to be running, so we cannot show the logs for it."
+else
+      sudo tail -f /var/lib/docker/containers/${LOCALSTACK_DOCKER_ID}/${LOCALSTACK_DOCKER_ID}-json.log
+fi
