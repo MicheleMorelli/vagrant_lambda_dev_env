@@ -9,6 +9,17 @@ In the guest, it is possible to use the following command to mock the API Gatewa
 lambda
 ```
 
+You can use the following commands to start Localstack in the Vagrant box:
+
+```
+# starting Localstack
+start
+
+# Checking the localstack logs:
+log
+```
+
+
 It will be then possible to get the results from the API in the host, eg:
 ```
 curl localhost:3000/my_function
