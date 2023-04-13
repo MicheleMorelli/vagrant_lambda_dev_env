@@ -51,6 +51,22 @@ awslocal s3 ls
 # 2023-04-13 13:49:30 just-a-test-bucket
 ```
 
+### Using Boto3 with Localstack
+Boto3 can easily be used with Localstack, for example:
+
+```python3
+import boto3
+import os
+boto3.setup_default_session(profile_name='localstack')
+s3 = boto3.client('s3', region_name='us-east-1',                                
+        endpoint_url=os.environ.get('LOCALSTACK_ENDPOINT_URL'))
+```
+You should then be able to use the `s3` Boto3 client against your running instance of Localstack. 
+For example:
+```
+s3.list_buckets()
+```
+
 
 ## Before you run the machine
 Set up the following environment variables:
