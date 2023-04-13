@@ -29,7 +29,16 @@ which python3
 python3 -m pip install awscli-local[ver1] aws-sam-cli-local localstack
 
 
-echo "Installing Serverless..."
-sudo npm install -g serverless
-npm install serverless-offline --save-dev
+echo "Installing NVM..."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+source ~/.nvm/nvm.sh
+
+echo "Installing NODE LTS..."
+nvm install --lts
+nvm use --lts
+npm --version
+
+echo "Installing Serverless and plugins..."
+npm install serverless -g
 npm install serverless-localstack --save-dev
+npm install serverless-offline --save-dev
