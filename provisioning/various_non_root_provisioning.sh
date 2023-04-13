@@ -28,4 +28,4 @@ source ~/${VENV_NAME}/bin/activate
 which python3
 python3 -m pip install awscli-local[ver1]
 python3 -m pip install aws-sam-cli-local
-
+python3 -m pip install localstack

@@ -27,3 +27,4 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export SAM_CLI_TELEMETRY=0
+export LOCALSTACK_ENDPOINT_URL="http://localhost:4566"

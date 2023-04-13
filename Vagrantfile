@@ -45,7 +45,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "#{CONFIG_DIR}/bashrc", destination: "#{HOME_DIR}/.bashrc"
   config.vm.provision "file", source: "#{CONFIG_DIR}/vimrc", destination: "#{HOME_DIR}/.vimrc"
   config.vm.provision "file", source: "#{CONFIG_DIR}/profile", destination: "#{HOME_DIR}/.profile"
-  config.vm.provision "file", source: "#{CONFIG_DIR}/localstack", destination: "#{HOME_DIR}/bin/localstack"
+  config.vm.provision "file", source: "#{CONFIG_DIR}/localstack_mock_credentials", destination: "#{HOME_DIR}/.aws/credentials"
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "lambda_playground"
@@ -53,5 +53,4 @@ Vagrant.configure("2") do |config|
     vb.cpus = 2
   end
   
-
 end
