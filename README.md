@@ -68,6 +68,20 @@ s3.list_buckets()
 ```
 
 
+## Serverless
+The machine has the `serverless` framework installed in case that is preferred over `sam-cli`.
+
+The following commands are available:
+```
+serverless
+sls
+```
+
+Also, the following plugin are installed:
+- [serverless-offline](https://www.serverless.com/plugins/serverless-offline)
+- [serverless-localstack](https://www.serverless.com/plugins/serverless-localstack)
+
+
 ## Before you run the machine
 Set up the following environment variables:
 
