@@ -2,7 +2,7 @@
 
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt install -y zip unzip lynx tree
+sudo apt install -y zip unzip lynx tree nodejs npm
 
 
 # Installing the version of Python that is supported by AWS Lambda

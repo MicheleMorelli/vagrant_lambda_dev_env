@@ -26,6 +26,10 @@ echo "Preparing the localstack environment..."
 docker pull localstack/localstack
 source ~/${VENV_NAME}/bin/activate
 which python3
-python3 -m pip install awscli-local[ver1]
-python3 -m pip install aws-sam-cli-local
-python3 -m pip install localstack
+python3 -m pip install awscli-local[ver1] aws-sam-cli-local localstack
+
+
+echo "Installing Serverless..."
+sudo npm install -g serverless
+npm install serverless-offline --save-dev
+npm install serverless-localstack --save-dev
