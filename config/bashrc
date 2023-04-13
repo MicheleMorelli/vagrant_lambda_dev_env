@@ -117,8 +117,6 @@ if ! shopt -oq posix; then
 fi
 
 
-PATH=$PATH:~/bin
-
 alias red_bgr="echo -ne '\e]11;#75221c\a';echo -ne '\e]10;#ffffff\a'"
 alias blue_bgr="echo -ne '\e]11;#1e2178\a';echo -ne '\e]10;#ffffff\a'"
 alias yellow_bgr="echo -ne '\e]11;#a2a365\a';echo -ne '\e]10;#031654\a'"
@@ -126,17 +124,59 @@ alias purple_bgr="echo -ne '\e]11;#47033d\a';echo -ne '\e]10;#fff0fd\a'"
 alias black_bgr="echo -ne '\e]11;#000000\a';echo -ne '\e]10;#b3ffab\a'"
 alias green_bgr="echo -ne '\e]11;#074200\a';echo -ne '\e]10;#51e340\a'"
 
+# some custom functions to make the messages more visible
+print_colour() {
+        COLOUR="$1"
+        MESSAGE="$2"
+        echo -e "\033[${COLOUR}m${MESSAGE}\033[0m"
+}
+
+print_red() {
+        MESSAGE="$1"
+        print_colour '1;91' "${MESSAGE}"
+}
+
+print_cyan() {
+        MESSAGE="$1"
+        print_colour '1;96' "${MESSAGE}"
+}
+
+print_yellow() {
+        MESSAGE="$1"
+        print_colour '1;93' "${MESSAGE}"
+}
+
+print_white() {
+        MESSAGE="$1"
+        print_colour '1;97' "${MESSAGE}"
+}
+
+
+
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+
+# using the LTS version of Node
+nvm use --lts
+
 black_bgr
 
 # Activating Python Venv automatically
 source ~/VM_VENV/bin/activate
 
-echo "SAM/AWS Lambda local dev env"
+print_white "SAM/AWS Lambda local dev env"
 
-echo "============================"
+print_yellow "============================"
 
 # Ensuring that we are using the right version of Python
-echo "=> which python3"
+print_cyan "=> which python3"
 which python3
-echo "=> which sam"
+print_cyan "=> which sam"
 which sam
+print_cyan "=> npm version"
+npm --version
